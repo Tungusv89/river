@@ -1,0 +1,114 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+
+    background: $color-bg;
+    color: $color-text;
+
+    font-family: $font-family;
+    font-size: $font-size;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+
+    &._frozen {
+        overflow: hidden;
+        height: 100%;
+    }
+
+}
+
+.container {
+    @include make-container();
+}
+
+@if $enable-grid-classes {
+    .row {
+        @include make-row();
+
+        >* {
+            @include make-col-ready();
+        }
+    }
+    @include make-grid-columns();
+}
+
+.hidden {
+    display: none !important;
+
+    @each $key in (md, lg, xl) {
+        &-#{$key} {
+            @include media-breakpoint-up($key) {
+                display: none !important;
+            }
+        }
+    }
+}
+
+.text {
+    &-nowrap {
+        white-space: nowrap;
+    }
+
+    &-muted {
+        color: rgba($color-text, .5);
+    }
+
+    &-uppercase {
+        text-transform: uppercase;
+    }
+}
+
+.color-primary {
+    color: $color-primary !important;
+}
+
+.color-secondary {
+    color: $color-secondary !important;
+}
+
+a,
+.link {
+    cursor: pointer;
+    color: $link-color;
+    text-decoration: underline solid rgba($color-text, .5);
+    @include transition((color, text-decoration-color));
+
+    @include hover-desktop {
+        color: $link-hover-color;
+        text-decoration-color: rgba($link-hover-color, .5);
+    }
+}
+
+strong {
+    font-weight: bold;
+}
+
+::placeholder {
+    color: rgba($color-text, .5);
+}
+
+:focus::placeholder {
+    opacity: 1;
+}
+
+.necessaty_fields {
+    display: none !important;
+}
+
+.ios-fixed {
+    @include media-breakpoint-down(sm) {
+        position: fixed;
+        overflow: hidden;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.lazyload {
+    visibility: hidden;
+}
+
+.fancybox-navigation {
+    position: static;
+}

@@ -1,0 +1,6 @@
+{
+    "locale": "ru",
+    "rtl": false,
+    "prodmaps": false,
+	"buildPath": "public"
+}

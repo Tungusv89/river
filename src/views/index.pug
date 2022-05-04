@@ -1,0 +1,83 @@
+extends _includes/layout
+
+block config
+    - var pagetitle = 'Index'
+    - var bodyClass = 'dev'
+
+block content
+    .container
+        .container-body
+            .block._white.navigation                 
+                h3.navigation__title Personal
+                ul.navigation__list 
+                    li.navigation__item Profile
+                    li.navigation__item Security
+                    li.navigation__item Notifications
+
+                h3.navigation__title Tesla s.r.L.
+                ul.navigation__list
+                    li.navigation__item Business profile
+                    li.navigation__item E-invoicing
+                    li.navigation__item.active Plan and limits
+                    li.navigation__item Team
+            .header-menu__icon
+                span 
+                span 
+                span                 
+            .wrap                
+                .block._white.info
+                    .tarif            
+                        .close Change plan
+                        h1.title Invoicing Start
+                        .price 6,99 € 
+                            span.date /mo
+                        .description 
+                            div We’ll charge 6,99 € on Jul  24, 2020
+                            .change Change card *** 5423  or billing info
+                        .btn-body 
+                            button.btn Switch to annual plan
+                            .btn__text and save 24,00 € a year
+                    .next-tarif
+                        .close Close 
+                        .heading Explore new features                                
+                        .next-tarif__block 
+                            .next-tarif__title Invoicing Premium
+                            .next-tarif__body                        
+                                .next-tarif__list                                        
+                                    .next-tarif__item Unlimited outgoing e-invoices
+                                    .next-tarif__item Unlimited connected banks
+                                    .next-tarif__item 10 users
+                                    .next-tarif__item Expense management
+                                .next-tarif__price-btn 
+                                    .next-tarif__price €20.99 
+                                        .date /mo
+                                    .next-tarif__description billed annually or 24.99 € billed monthly
+                                    button.btn Upgrade                    
+                .indicators
+                    .indicators__tabs
+                        .tabs__item.active Limits
+                        .tabs__item Invoices
+                    .indicators__range
+                        .range__items 
+                            .range__header
+                                .range__title Team members
+                                .range__value 3
+                                    span.gray  / 6
+                            .range__display
+                            .range__description Need more members?
+                                a  Upgrade your plan    
+                        .range__items
+                            .range__header
+                                .range__title Outgoing e-invoices
+                                .range__value Unlimited
+                            .range__display
+                            .range__description Send as many e-invoices as you want                                  
+                        .range__items
+                            .range__header
+                                .range__title Connected sources (banks)
+                                .range__value 5
+                                    span.gray  / 5
+                            .range__display
+                            .range__description Need more banks to connect?
+                                a  Upgrade your plan 
+
